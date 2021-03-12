@@ -1,0 +1,36 @@
+{
+  "articleList" : [
+    {
+      "name" : "Honda",
+      "slogan" : "Drive with you",
+      "netPrice" : 1.5,
+      "vatRatio" : 0.2,
+      "discountInfo" : [
+        {
+          "discountDate" : "12-03-2021",
+          "discountPrice" : 1.1
+        },
+        {
+          "discountDate" : "13-03-2021",
+          "discountPrice" : 1.1
+        }
+      ]
+    },
+    {
+      "name" : "Sony",
+      "slogan" : "Make that belive",
+      "netPrice" : 1.5,
+      "vatRatio" : 0.2,
+      "discountInfo" : [
+        {
+          "discountDate" : "14-03-2021",
+          "discountPrice" : 1.1
+        },
+        {
+          "discountDate" : "15-03-2021",
+          "discountPrice" : 1.1
+        }
+      ]
+    }
+  ]
+}

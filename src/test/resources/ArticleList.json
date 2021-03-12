@@ -1,0 +1,34 @@
+[
+  {
+    "name": "",
+    "slogan": "",
+    "netPrice": null,
+    "vatRatio": null,
+    "discountInfo": [
+      {
+        "discountDate": "",
+        "discountPrice": null
+      },
+      {
+        "discountDate": "",
+        "discountPrice": null
+      }
+    ]
+  },
+  {
+    "name": "",
+    "slogan": "",
+    "netPrice": null,
+    "vatRatio": null,
+    "discountInfo": [
+      {
+        "discountDate": "",
+        "discountPrice": null
+      },
+      {
+        "discountDate": "",
+        "discountPrice": null
+      }
+    ]
+  }
+]
