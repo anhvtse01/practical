@@ -12,11 +12,12 @@ public class MainTestClass {
     @Test
     public void testMain() {
         final List<Article> list = CommonUtils.getArticlesFromFile();
-        final String date = "13-03-2021";
+        final String date = "14-03-2021";
         final Optional<Date> discountDate = CommonUtils.formatDate(date);
         final List<Double> result = MainClass.printArticleDiscount(list, discountDate.get());
         Assertions.assertEquals(list.size(), 2);
-        Assertions.assertEquals(result.size(), 1);
-        Assertions.assertEquals(result.get(0), 9.6);
+        Assertions.assertEquals(result.size(), 2);
+        Assertions.assertEquals(result.get(0), 8.4);
+        Assertions.assertEquals(result.get(1), 12.0);
     }
 }

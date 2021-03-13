@@ -14,8 +14,7 @@ public class MainClass {
     static Logger logger = LogManager.getLogger(CommonUtils.class);
 
     public static void main(String[] args) throws IOException {
-        boolean endLoop = true;
-        while (endLoop) {
+        while (true) {
             System.out.print("Input discount date: \n");
             final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             final String date = br.readLine();
@@ -24,7 +23,7 @@ public class MainClass {
             if (!articles.isEmpty() && discountDate.isPresent()) {
                 logger.info("Article not found or date input invalid");
                 if (!printArticleDiscount(articles, discountDate.get()).isEmpty()) {
-                    endLoop = false;
+                    break;
                 }
                 System.out.print("Not found any discount article. Please input another date \n");
             }
