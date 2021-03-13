@@ -1,36 +1,36 @@
-{
-  "articleList" : [
-    {
-      "name" : "Honda",
-      "slogan" : "Drive with you",
-      "netPrice" : 1.5,
-      "vatRatio" : 0.2,
-      "discountInfo" : [
-        {
-          "discountDate" : "12-03-2021",
-          "discountPrice" : 1.1
-        },
-        {
-          "discountDate" : "13-03-2021",
-          "discountPrice" : 1.1
-        }
-      ]
-    },
-    {
-      "name" : "Sony",
-      "slogan" : "Make that belive",
-      "netPrice" : 1.5,
-      "vatRatio" : 0.2,
-      "discountInfo" : [
-        {
-          "discountDate" : "14-03-2021",
-          "discountPrice" : 1.1
-        },
-        {
-          "discountDate" : "15-03-2021",
-          "discountPrice" : 1.1
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "name": "Honda",
+    "slogan": "Drive with you",
+    "netPrice": 7,
+    "salePrice": 12,
+    "vatRatio": 0.2,
+    "discountInfo": [
+      {
+        "discountDate": "14-03-2021",
+        "discountPercent": 0.2
+      },
+      {
+        "discountDate": "13-03-2021",
+        "discountPercent": 0.2
+      }
+    ]
+  },
+  {
+    "name": "Sony",
+    "slogan": "Make that believe",
+    "netPrice": 8,
+    "salePrice": 15,
+    "vatRatio": 0.2,
+    "discountInfo": [
+      {
+        "discountDate": "14-03-2021",
+        "discountPercent": 0.2
+      },
+      {
+        "discountDate": "15-03-2021",
+        "discountPercent": 0.2
+      }
+    ]
+  }
+]

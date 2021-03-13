@@ -16,6 +16,9 @@ public class Article {
     @SerializedName("netPrice")
     private Double netPrice;
 
+    @SerializedName("salePrice")
+    private Double salePrice;
+
     @SerializedName("vatRatio")
     private Double vatRatio;
 
@@ -63,5 +66,13 @@ public class Article {
 
     public void setDiscountInfo(List<DiscountInfo> discountInfo) {
         this.discountInfo = discountInfo;
+    }
+
+    public Double getSalePrice() {
+        return salePrice;
+    }
+
+    public void setSalePrice(Double salePrice) {
+        this.salePrice = salePrice;
     }
 }

@@ -12,57 +12,51 @@ import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CommonUtils {
 
     static Logger logger = LogManager.getLogger(CommonUtils.class);
-    private static final String inputFile = "ArticleList.json";
+    private static final String INPUT_FILE = "ArticleList.json";
+    private static final String FORMAT_DATE = "dd-mm-yyyy";
 
     public static List<Article> getArticlesFromFile() {
         final List<Article> articles = new ArrayList<>();
-        try (InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(inputFile)) {
+        try (InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(INPUT_FILE)) {
             final Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8);
             final Gson gson = new Gson();
-            List<Article> temp = gson.fromJson(reader, new TypeToken<List<Article>>() {}.getType());
-            articles.addAll(temp);
-        }
-        catch (Exception e) {
-            logger.error("Error when get list articles");
+            List<Article> temp = gson.fromJson(reader, new TypeToken<List<Article>>() {
+            }.getType());
+            articles.addAll(validate(temp));
+        } catch (Exception e) {
+            logger.error("Error when get list articles", e);
         }
         return articles;
     }
 
-    public List<Article> validate(final List<Article> input) {
+    public static List<Article> validate(final List<Article> input) {
         return input.stream()
-                    .filter(this::isDiscountPriceValid)
-                    .collect(Collectors.toList());
+                .filter(CommonUtils::isDiscountPriceValid)
+                .collect(Collectors.toList());
     }
 
-    public static Date formatDate(String date, String format) {
+    public static Optional<Date> formatDate(String date) {
         if (date == null || date.equals("")) {
-            return null;
+            return Optional.empty();
         }
-        final SimpleDateFormat sdf = new SimpleDateFormat(format);
+        final SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_DATE);
         Date d = new Date();
         try {
             d = sdf.parse(date);
+        } catch (ParseException e) {
+            logger.error("Date input invalid {}", date);
+            return Optional.empty();
         }
-        catch (ParseException e) {
-            logger.error("Can not parse date {}", date);
-            return null;
-        }
-        return d;
+        return Optional.of(d);
     }
 
-    private boolean isDiscountPriceValid(final Article article) {
-        return article.getDiscountInfo()
-                      .stream()
-                      .filter(Objects::nonNull)
-                      .anyMatch(a -> a.getDiscountPrice() > article.getNetPrice());
+    private static boolean isDiscountPriceValid(final Article article) {
+        return article.getSalePrice() >= article.getNetPrice();
     }
 }

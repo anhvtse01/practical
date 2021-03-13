@@ -1,33 +1,35 @@
 [
   {
-    "name": "",
-    "slogan": "",
-    "netPrice": null,
-    "vatRatio": null,
+    "name": "Honda",
+    "slogan": "Drive with you",
+    "netPrice": 7,
+    "salePrice": 12,
+    "vatRatio": 0.2,
     "discountInfo": [
       {
-        "discountDate": "",
-        "discountPrice": null
+        "discountDate": "14-03-2021",
+        "discountPercent": 0.2
       },
       {
-        "discountDate": "",
-        "discountPrice": null
+        "discountDate": "13-03-2021",
+        "discountPercent": 0.2
       }
     ]
   },
   {
-    "name": "",
-    "slogan": "",
-    "netPrice": null,
-    "vatRatio": null,
+    "name": "Sony",
+    "slogan": "Make that believe",
+    "netPrice": 8,
+    "salePrice": 15,
+    "vatRatio": 0.2,
     "discountInfo": [
       {
-        "discountDate": "",
-        "discountPrice": null
+        "discountDate": "14-03-2021",
+        "discountPercent": 0.2
       },
       {
-        "discountDate": "",
-        "discountPrice": null
+        "discountDate": "15-03-2021",
+        "discountPercent": 0.2
       }
     ]
   }
