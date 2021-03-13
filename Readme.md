@@ -2,4 +2,4 @@
 2. Run program by command "gradlew run"
 3. Input date has a format "dd-mm-yyyy"
 
-Note: I make a simple unit test which you can see it to figure out how application working
+Note: I make a simple unit test that you can see it to figure out how application working
